@@ -27,12 +27,13 @@ services:
       working_dir: /application
       volumes:
         - ../www:/application
-        - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-        - ./nginx/cert/5635101_www.liqiankun.com.key:/etc/nginx/cert/5635101_www.liqiankun.com.key
-        - ./nginx/cert/5635101_www.liqiankun.com.pem:/etc/nginx/cert/5635101_www.liqiankun.com.pem
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+        - ./nginx/conf.d:/etc/nginx/conf.d       
       ports:
         - "80:80"
         - "8082:8082"
+        - "8083:8083"
+        - "8084:8084"
         - "443:443"
       labels:
         - "com.centurylinklabs.watchtower.enable=true"  
